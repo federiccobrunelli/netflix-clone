@@ -9,7 +9,8 @@ export const Inner = styled.div`
   display: flex;
   padding: 70px 45px;
   flex-direction: column;
-  max-width: 815px;
+  width: 100%;
+  max-width: 900px;
   margin: auto;
 `;
 
@@ -30,7 +31,7 @@ export const Item = styled.div`
   color: white;
   margin: auto;
   margin-bottom: 10px;
-  max-width: 728px;
+  max-width: 815px;
   width: 100%;
 
   &:first-of-type {
@@ -79,7 +80,6 @@ export const Body = styled.div`
   user-select: none;
   overflow: hidden;
   padding: 5%;
-  max-width: 670px;
   border-radius: 5px;
   border-radius: 0 0 5px 5px;
 

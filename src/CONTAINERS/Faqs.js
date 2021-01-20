@@ -1,5 +1,6 @@
 import React from 'react';
-import { Accordion } from '../COMPONENTS'
+import { Accordion, OptForm } from '../COMPONENTS'
+import { OptFormContainer } from './OptForm'
 import faqsData from '../FIXTURES/faqs.json'
   
 export function FaqsContainer() {
@@ -12,6 +13,7 @@ export function FaqsContainer() {
                     <Accordion.Body>{item.body}</Accordion.Body>
                 </Accordion.Item>
             ))}
+            <OptFormContainer />
         </Accordion>
     )
 };

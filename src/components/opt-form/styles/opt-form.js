@@ -3,9 +3,22 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100%;
   margin-top: 20px;
   flex-wrap: wrap;
+  flex-direction: column;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -16,10 +29,17 @@ export const Container = styled.div`
 export const Input = styled.input`
   max-width: 450px;
   width: 100%;
-  border: 0;
+  border: 1px solid grey;
   padding: 10px;
   height: 70px;
   box-sizing: border-box;
+  border-radius: 5px 0 0 5px;
+  margin-right: 2px;
+  
+  @media(max-width: 1000px){
+      border-radius: 5px;
+      height: 50px;
+  }
 `;
 
 export const Break = styled.div`
@@ -38,15 +58,12 @@ export const Button = styled.button`
   font-size: 26px;
   border: 0;
   cursor: pointer;
+  border-radius: 0 5px 5px 0;
 
   img {
     margin-left: 10px;
     filter: brightness(0) invert(1);
     width: 24px;
-
-    @media (max-width: 1000px) {
-      width: 16px;
-    }
   }
 
   &:hover {
@@ -57,7 +74,7 @@ export const Button = styled.button`
     height: 50px;
     font-size: 16px;
     margin-top: 20px;
-    font-weight: bold;
+    border-radius: 5px;
   }
 `;
 
