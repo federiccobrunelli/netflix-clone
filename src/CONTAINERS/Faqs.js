@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, OptForm } from '../COMPONENTS'
+import { Accordion } from '../COMPONENTS'
 import { OptFormContainer } from './OptForm'
 import faqsData from '../FIXTURES/faqs.json'
   

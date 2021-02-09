@@ -38,7 +38,7 @@ export const Container = styled.div`
 export const Logo = styled.img`
     height: 53px;
     width: 167px;
-    padding-top: .5rem;
+    padding-right: 50px;
 
   @media (max-width: 950px) {
     width: 144px;
@@ -59,7 +59,7 @@ export const Link = styled.p`
   cursor: pointer;
 
   &:hover {
-    font-weight: bold;
+    text-decoration: underline;
   }
 
   &:last-of-type {
@@ -76,11 +76,10 @@ export const SearchInput = styled.input`
   background-color: rgba(64, 64, 64, 0.5);
   color: white;
   border: 1px solid white;
-  transition: width 0.5s;
+  transition: all 0.5s;
   height: 30px;
   font-size: 14px;
   border-radius: 4px;
-  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
   padding: ${({ active }) => (active === true ? '0 10px' : '0')};
   opacity: ${({ active }) => (active === true ? '1' : '0')};
   width: ${({ active }) => (active === true ? '200px' : '0px')};
@@ -149,6 +148,7 @@ export const ButtonLink = styled(ReachRouterLink)`
 export const Picture = styled.button`
   background: url(${({ src }) => src});
   background-size: contain;
+  border-radius: 10%;
   border: 0;
   width: 32px;
   height: 32px;
@@ -156,13 +156,18 @@ export const Picture = styled.button`
 `;
 
 export const Dropdown = styled.div`
-  display: none;
+  display: flex;
   position: absolute;
+
   background-color: black;
+  border-radius: 7px;
   padding: 10px;
   width: 100px;
   top: 32px;
   right: 10px;
+  transform: scale(0);
+  transform-origin: 100% 0%;
+  transition: all .15s;
 
   ${Group}:last-of-type ${Link} {
     cursor: pointer;
@@ -170,6 +175,7 @@ export const Dropdown = styled.div`
 
   ${Group} {
     margin-bottom: 10px;
+    flex-direction: column;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -177,10 +183,17 @@ export const Dropdown = styled.div`
 
     ${Link} {
       cursor: pointer;
+      margin: 5px auto;
+
+      &:first-of-type {
+      margin-top: 10px;
+    }
     }
 
     ${Picture} {
       cursor: default;
+      background-repeat: no-repeat;
+
     }
   }
 
@@ -206,7 +219,7 @@ export const Profile = styled.div`
   }
 
   &:hover > ${Dropdown} {
-    display: flex;
+    transform: scale(1);
     flex-direction: column;
   }
 `;
@@ -222,7 +235,7 @@ export const Feature = styled(Container)`
   }
 `;
 
-export const FeatureCallOut = styled.h2`
+export const FeatureTitle = styled.h2`
   color: white;
   font-size: 50px;
   line-height: normal;
@@ -238,7 +251,6 @@ export const Text = styled.p`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 `;
 
-
 export const PlayButton = styled.button`
   box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
   background-color: #e6e6e6;
@@ -251,7 +263,7 @@ export const PlayButton = styled.button`
   font-size: 20px;
   margin-top: 10px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: #ff1e1e;

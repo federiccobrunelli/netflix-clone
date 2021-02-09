@@ -3,3 +3,4 @@ export { JumbotronContainer } from './Jumbotron';
 export { FaqsContainer } from './Faqs';
 export { HeaderContainer } from './Header';
 export { OptFormContainer } from './OptForm';
+export { SelectProfileContainer } from './Profiles';
